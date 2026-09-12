@@ -1,0 +1,16 @@
+{
+  "name": "proctree-formatter",
+  "version": "0.1.0",
+  "description": "Normalizes messy process tree text into a consistent format",
+  "private": true,
+  "license": "MIT",
+  "bin": {
+    "proctree-fmt": "dist/cli.js"
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
