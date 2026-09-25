@@ -72,6 +72,7 @@ node dist/cli.js some-file.txt
 
 ## Status
 
-Early. The parser currently treats each line as an opaque label — it
-doesn't yet parse out PIDs, PPIDs, or resource columns from `ps -ef`
-style tabular input. See the roadmap for what's planned next.
+Early. The parser now pulls a PID and, where present, a PPID out of each
+label's own annotation — `sshd(1234)`, `sshd(1234,1)`, `sshd pid=1234
+ppid=1` — but doesn't yet build a tree directly from `ps -ef` style
+tabular columns. See the roadmap for what's planned next.
