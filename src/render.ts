@@ -1,5 +1,12 @@
 import { ProcNode } from "./tree";
 
+// Emits the forest as a JSON array of nodes, each with label, pid, ppid and
+// children. pid/ppid are null when the input carried no annotation, so
+// consumers can tell "unknown" apart from a real id.
+export function renderJson(roots: ProcNode[]): string {
+  return JSON.stringify(roots, ["label", "pid", "ppid", "children"], 2);
+}
+
 // Redraws a forest with a single canonical set of connectors, the same
 // style the "tree" command uses. Root entries get no connector of their
 // own; only their descendants branch off of them.

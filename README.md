@@ -45,8 +45,13 @@ $ pstree -p | proctree-fmt
 ## Usage
 
 ```
-proctree-fmt [file ...]
+proctree-fmt [--json] [file ...]
 ```
+
+- `--json` prints the parsed forest as a JSON array instead of drawing it.
+  Each node has `label`, `pid`, `ppid` and `children`; `pid` and `ppid` are
+  `null` when the label carried no annotation. With several files, one JSON
+  document is printed per file and the filename headers are omitted.
 
 - With no arguments, or `-`, it reads from stdin.
 - With one or more file arguments, it formats each file in turn. If more
